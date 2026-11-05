@@ -1,0 +1,43 @@
+# Content-level matching rules. Edited often, so kept out of Python code.
+# Values are case-insensitive regex fragments.
+
+fact_keys:
+  expense_ratio: ["expense ratio", "total expense ratio", "\\bter\\b"]
+  exit_load: ["exit load", "exit penalty"]
+  min_sip: ["minimum sip", "min\\.? sip", "minimum investment", "min\\.? investment"]
+  lock_in: ["lock[- ]?in", "lockin"]
+  riskometer: ["riskometer", "risk level"]
+  benchmark: ["benchmark", "tier 1 benchmark"]
+  statement_download: ["capital gains? statement", "download statement", "account statement", "gain/loss statement"]
+
+# Canonical search phrases used to rewrite a factual question (§6). Natural
+# phrases embed better than bare keys: "lock_in" scores 0.365 on the corpus,
+# "lock-in period of the fund" scores 0.50. Keep them close to the chunk text.
+fact_queries:
+  expense_ratio: "expense ratio of the fund"
+  exit_load: "exit load of the fund"
+  min_sip: "minimum SIP amount"
+  lock_in: "lock-in period of the fund"
+  riskometer: "riskometer level of the fund"
+  benchmark: "benchmark of the fund"
+  statement_download: "download capital gains statement"
+
+# Canonical display names used in answers and in the retrieval rewrite.
+schemes:
+  hdfc_large_cap: ["large cap", "largecap"]
+  hdfc_flexi_cap: ["flexi cap", "flexicap", "equity fund"]
+  hdfc_elss: ["elss", "tax saver", "tax saving"]
+  hdfc_mid_cap: ["mid cap", "midcap"]
+
+scheme_names:
+  hdfc_large_cap: "HDFC Large Cap Fund – Direct Plan Growth"
+  hdfc_flexi_cap: "HDFC Flexi Cap Fund – Direct Plan Growth"
+  hdfc_elss: "HDFC ELSS Tax Saver Fund – Direct Plan Growth"
+  hdfc_mid_cap: "HDFC Mid Cap Fund – Direct Plan Growth"
+
+# Pre-gate refusal patterns, checked in this order (see implementation.md §8.1).
+refusal:
+  advice: ["should i", "should we", "recommend", "worth it", "good (fund|option|bet)", "better", "\\bbuy\\b", "\\bsell\\b", "\\bhold\\b", "invest in my"]
+  portfolio: ["my portfolio", "risk profile", "suitab", "retire in", "asset allocation"]
+  performance: ["returns?", "cagr", "xirr", "will it give", "how much will", "profit", "compare .* and .*"]
+  out_of_scope: ["\\bsbi\\b", "\\baxis\\b", "\\bicici\\b", "\\bppf\\b", "\\bfd\\b", "cab|movie|weather"]

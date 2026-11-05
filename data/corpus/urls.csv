@@ -1,0 +1,6 @@
+id,url,page_type,scheme,amc,plan,intent_tags,education
+groww_hdfc_amc,https://groww.in/mutual-funds/amc/hdfc-mutual-funds,groww_amc,,HDFC Mutual Fund,na,amc_overview,false
+groww_hdfc_large_cap,https://groww.in/mutual-funds/hdfc-large-cap-fund-direct-growth,groww_scheme,hdfc_large_cap,HDFC Mutual Fund,direct_growth,expense_ratio|exit_load|min_sip|riskometer|benchmark|basics,false
+groww_hdfc_flexi_cap,https://groww.in/mutual-funds/hdfc-equity-fund-direct-growth,groww_scheme,hdfc_flexi_cap,HDFC Mutual Fund,direct_growth,expense_ratio|exit_load|min_sip|riskometer|benchmark|basics,false
+groww_hdfc_elss,https://groww.in/mutual-funds/hdfc-elss-tax-saver-fund-direct-plan-growth,groww_scheme,hdfc_elss,HDFC Mutual Fund,direct_growth,expense_ratio|exit_load|min_sip|lock_in|riskometer|benchmark,false
+groww_hdfc_mid_cap,https://groww.in/mutual-funds/hdfc-mid-cap-fund-direct-growth,groww_scheme,hdfc_mid_cap,HDFC Mutual Fund,direct_growth,expense_ratio|exit_load|min_sip|riskometer|benchmark|basics,false

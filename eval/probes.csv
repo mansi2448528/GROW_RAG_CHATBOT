@@ -1,0 +1,11 @@
+query_id,query,expected_doc_id,expected_fact_key,expected_text
+p01_expense_flexi,"What is the expense ratio of HDFC Flexi Cap Direct Plan?",groww_hdfc_flexi_cap,expense_ratio,"0.75%"
+p02_lockin_elss,"What is the lock-in period for HDFC ELSS?",groww_hdfc_elss,lock_in,"3 years from the date of investment"
+p03_exit_large_cap,"What is the exit load for HDFC Large Cap Fund?",groww_hdfc_large_cap,exit_load,"Exit load of 1% if redeemed within 1 year"
+p04_minsip_mid_cap,"What is the minimum SIP for HDFC Mid Cap Fund?",groww_hdfc_mid_cap,min_sip,"₹100"
+p05_risk_elss,"What is the riskometer level of HDFC ELSS Tax Saver?",groww_hdfc_elss,riskometer,"Very High Risk"
+p06_bench_flexi,"What is the benchmark of HDFC Flexi Cap?",groww_hdfc_flexi_cap,benchmark,"NIFTY 500 Total Return Index"
+p07_bench_large_cap,"What is the benchmark of HDFC Large Cap Fund?",groww_hdfc_large_cap,benchmark,"NIFTY 100 Total Return Index"
+p08_base_expense_elss,"What is the base expense ratio of HDFC ELSS?",groww_hdfc_elss,expense_ratio,"0.97%"
+p09_amc_ceo,"Who is the CEO of HDFC Mutual Fund?",groww_hdfc_amc,,"Chief Executive Officer"
+p10_amc_aum,"What is the total AUM of HDFC Mutual Fund?",groww_hdfc_amc,,"9,34,075.66"

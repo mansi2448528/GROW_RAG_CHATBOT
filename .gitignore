@@ -1,0 +1,36 @@
+# --- local environment -------------------------------------------------------
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- secrets: never commit ---------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.streamlit/secrets.toml
+
+# --- generated query history and pipeline outputs ----------------------------
+# The app writes these at request/build time. They can contain user questions,
+# so none of them belong in Git. Only the empty stage placeholders are kept.
+data/artifacts/**/*
+!data/artifacts/**/
+!data/artifacts/**/.gitkeep
+data/cache/
+
+# --- runtime assets that MUST be committed -----------------------------------
+# The prebuilt Chroma index is required at startup because the deployed app
+# does not run the ingestion pipeline. Keep data/chroma/ tracked.
+!data/chroma/
+!data/chroma/**
+
+# --- OS / editor noise -------------------------------------------------------
+Thumbs.db
+.DS_Store
+.vscode/
+.idea/
