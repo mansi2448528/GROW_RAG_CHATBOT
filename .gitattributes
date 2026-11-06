@@ -1,0 +1,9 @@
+* text=auto
+
+# Linux containers execute these files directly. Keep LF endings even when the
+# repository is checked out on Windows.
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.toml text eol=lf
