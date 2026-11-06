@@ -226,6 +226,19 @@ def load_config(path: str | Path | None = None) -> AppConfig:
     except ValidationError as exc:
         raise ConfigError(f"invalid config at {cfg_path}:\n{exc}") from exc
 
+    # Hosted platforms (Vercel container Functions, Render, etc.) mount the
+    # source tree read-only and provide a writable /tmp. These overrides let
+    # the launcher redirect state without changing the checked-in config.
+    path_overrides = (
+        ("MF_FAQ_ARTIFACTS_DIR", cfg.app, "artifacts_dir"),
+        ("MF_FAQ_CHROMA_DIR", cfg.vectorstore, "persist_dir"),
+        ("MF_FAQ_CACHE_DIR", cfg.corpus, "cache_dir"),
+    )
+    for env_name, section, attr in path_overrides:
+        override = os.getenv(env_name, "").strip()
+        if override:
+            setattr(section, attr, Path(override))
+
     for rel in (cfg.app.artifacts_dir, cfg.vectorstore.persist_dir,
                 cfg.corpus.cache_dir, cfg.corpus.manifest.parent):
         cfg.resolve(rel).mkdir(parents=True, exist_ok=True)

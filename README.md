@@ -184,14 +184,14 @@ print a harmless `missing ScriptRunContext` warning; the checks still run.
 
 See **[DEPLOY.md](DEPLOY.md)** for step-by-step instructions.
 
-- **Recommended:** Streamlit Community Cloud (free, native Streamlit, supports
-  dashboard secrets).
-- **Alternative:** any Docker host using the included `Dockerfile` (Render,
-  Railway, Fly.io, Azure, etc.).
-- **Vercel is not supported:** Streamlit needs a persistent WebSocket server and
-  the RAG stack exceeds Vercel's serverless limits. The repository is still
-  Vercel-ready in the sense that it can be imported there, but the app will not
-  serve requests.
+- **Vercel:** deploy through the root `Dockerfile` using Vercel's Container
+  Runtime (`framework: container`). Set `PORT=8501` and, optionally,
+  `GROQ_API_KEY` / `LLM_MODEL`. See the Vercel section in the deployment guide
+  for the beta WebSocket session limit.
+- **Streamlit Community Cloud:** free, native Streamlit, supports dashboard
+  secrets.
+- **Any Docker host:** use the included `Dockerfile` (Render, Railway, Fly.io,
+  Azure, etc.).
 
 The prebuilt `data/chroma/` index and `data/corpus/urls.csv` manifest are
 committed because the deployed app does not run the ingestion pipeline.

@@ -1,6 +1,7 @@
 .git
 .gitignore
 .dockerignore
+.vercel
 .venv
 venv
 __pycache__

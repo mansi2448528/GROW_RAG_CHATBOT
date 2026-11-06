@@ -34,3 +34,6 @@ Thumbs.db
 .DS_Store
 .vscode/
 .idea/
+
+# --- Vercel CLI project link (contains machine-local settings) ---------------
+.vercel/
